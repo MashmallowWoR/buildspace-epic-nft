@@ -8,8 +8,19 @@ Try running some of the following tasks:
 npx hardhat accounts
 npx hardhat compile
 npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+// install needed packages 
+npm install --save-dev @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers
+npm install @openzeppelin/contracts
+// test local network setup with sample script
+npx hardhat run scripts/sample-script.js
+// use .env for hardhat config variables
+npm install dotenv
+// test contract on local hardhat network
+npx hardhat run scripts/run.js 
+// deploy contract on Rinkeby test network
+npx hardhat run scripts/deploy.js --network rinkeby
+// install packages to connect to Ethscan
+npm i -D @nomiclabs/hardhat-etherscan 
+// verify contract on Ethscan
+npx hardhat verify {CONTRACT_ADDRESS} --network rinkeby
 ```
